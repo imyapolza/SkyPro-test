@@ -1,0 +1,16 @@
+.label {
+  margin-right: 64px;
+  border-bottom: 1px solid #cacdd8;
+}
+
+.input {
+  height: 25px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: black;
+}

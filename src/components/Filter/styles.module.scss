@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 42px;
+}
+
+@media (max-width: 685px) {
+  .wrapper {
+    justify-content: center;
+  }
+}

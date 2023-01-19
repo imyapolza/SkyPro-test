@@ -1,19 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Main from "./pages/Main";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Cart from "./pages/Cart";
+import App from "./App";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  document.getElementById("root") as HTMLElement
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <App>
+        <Main />
+      </App>
+    ),
+  },
+  {
+    path: "cart",
+    element: (
+      <App>
+        <Cart />
+      </App>
+    ),
+  },
+]);
+
+root.render(
+  <div className="wrapper">
+    <RouterProvider router={router} />
+  </div>
+);

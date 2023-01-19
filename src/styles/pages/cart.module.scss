@@ -1,0 +1,75 @@
+@mixin d-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin font {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.wrapper {
+  @include d-flex;
+  margin-top: 32px;
+}
+
+.head {
+  @include d-flex;
+  width: 53em;
+  border-bottom: 0.5px solid #cacdd8;
+  padding-bottom: 14px;
+}
+
+.title {
+  @include font;
+}
+
+.count {
+  @include font;
+}
+
+.cards {
+  margin-top: 25px;
+}
+
+.next {
+  margin-left: 7px;
+  background: #000000;
+  color: white;
+}
+
+.default {
+  font-size: 30px;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1500px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .head {
+    width: 100%;
+  }
+}
+
+@media (max-width: 835px) {
+  .button_bottom {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .button_bottom {
+    font-size: 14px;
+  }
+  .buttons {
+    display: flex;
+  }
+}

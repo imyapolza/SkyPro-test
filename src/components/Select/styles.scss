@@ -1,0 +1,79 @@
+.App {
+  font-family: cursive;
+}
+
+.title {
+  text-align: center;
+}
+
+.custom-select-container {
+  display: inline-block;
+  min-width: 250px;
+  text-align: center;
+  position: relative;
+}
+
+.custom-select-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 46px;
+}
+
+.custom-select-option:hover {
+  background: #cccccc;
+  transition: 0.3s;
+}
+
+.arrow {
+  position: absolute;
+  right: 22px;
+  top: 17px;
+
+  &_active {
+    transform: rotate(180deg);
+    top: 7px;
+  }
+}
+
+.selected-text {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #37b0b0;
+  height: 38px;
+  color: #000000;
+  border: 1px solid #c4c4c4;
+  border-radius: 20px;
+  width: 288px;
+  padding-left: 14px;
+  cursor: pointer;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.selected-text::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  border: 7px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.selected-text.active::after {
+  top: 8px;
+  border-color: transparent transparent #fff transparent;
+}
+
+.select-options {
+  position: absolute;
+  width: 100%;
+  margin-top: 5px;
+  background: gainsboro;
+  z-index: 1;
+  border-radius: 20px;
+}

@@ -1,0 +1,17 @@
+.button {
+  width: 18.2em;
+  height: 2.6em;
+  border: 1px solid #040404;
+  border-radius: 20px;
+  cursor: pointer;
+
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+
+  &_small {
+    height: 29px;
+    background: 0;
+    border: 0;
+  }
+}

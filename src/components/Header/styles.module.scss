@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #cccccc;
+  height: 77px;
+}
+
+.title {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 36px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+@media (max-width: 685px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}
