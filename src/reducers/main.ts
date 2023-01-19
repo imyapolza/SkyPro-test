@@ -7,33 +7,39 @@ export const initialState = JSON.parse(
 function reducer(state: IState, action: Action) {
   switch (action.type) {
     case "addCard":
-      const foundAddCard = state.cards.find(
-        ({ id }) => action.payload && id === action.payload.id
-      );
+      if (Array.isArray(state.cards)) {
+        const foundAddCard = state.cards.find(
+          ({ id }) => action.payload && id === action.payload.id
+        );
 
-      if (!foundAddCard) {
-        return { ...state, cards: [...state.cards, action.payload] };
-      } else {
-        foundAddCard["count"] = foundAddCard.count + 1;
+        if (!foundAddCard) {
+          return { ...state, cards: [...state.cards, action.payload] };
+        } else {
+          foundAddCard["count"] = foundAddCard.count + 1;
 
-        return { ...state, cards: [...state.cards] };
+          return { ...state, cards: [...state.cards] };
+        }
       }
 
+      return state;
+
     case "deleteCard":
-      const foundDeleteCard = state.cards.find(
-        ({ id }) => id === action.payload
-      );
+      if (Array.isArray(state.cards)) {
+        const foundDeleteCard = state.cards.find(
+          ({ id }) => id === action.payload
+        );
 
-      const newDeleteCards = state.cards.filter(
-        (item) => item.id !== action.payload
-      );
+        const newDeleteCards = state.cards.filter(
+          (item) => item.id !== action.payload
+        );
 
-      if (foundDeleteCard) {
-        return {
-          ...state,
-          cards: newDeleteCards,
-          total: state.total - foundDeleteCard.price * foundDeleteCard.count,
-        };
+        if (foundDeleteCard) {
+          return {
+            ...state,
+            cards: newDeleteCards,
+            total: state.total - foundDeleteCard.price * foundDeleteCard.count,
+          };
+        }
       }
 
       return state;
