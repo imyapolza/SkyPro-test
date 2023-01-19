@@ -14,9 +14,8 @@ const Cards = ({ cards, type = "catalog" }: Props): JSX.Element => {
         [styles.wrapper_cart]: type === "cart",
       })}
     >
-      {cards.map((item, index) => (
-        <Card key={index} {...item} type={type} />
-      ))}
+      {cards &&
+        cards.map((item, index) => <Card key={index} {...item} type={type} />)}
     </main>
   );
 };
