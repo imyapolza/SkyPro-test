@@ -76,7 +76,9 @@ function reducer(state: IState, action: Action) {
       return { ...state, initalCards: action.payload };
 
     case "filterIndex":
-      const newFilterCards = state.initalCards.slice(0);
+      const newFilterCards = Array.isArray(state.initalCards)
+        ? state.initalCards.slice(0)
+        : [];
 
       const byField = (field: "price") => {
         if (action.payload === 0) {
