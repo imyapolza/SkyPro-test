@@ -39,7 +39,9 @@ function reducer(state: IState, action: Action) {
       return state;
 
     case "addCount":
-      const newAddCards = state.cards.slice(0);
+      const newAddCards = Array.isArray(state.cards)
+        ? state.cards.slice(0)
+        : [];
 
       const card = newAddCards.find(({ id }) => id === action.payload.id);
 
@@ -50,7 +52,9 @@ function reducer(state: IState, action: Action) {
       return { ...state, cards: state.cards };
 
     case "changeTotal":
-      const newChangeCards = state.cards.slice(0);
+      const newChangeCards = Array.isArray(state.cards)
+        ? state.cards.slice(0)
+        : [];
 
       const total = newChangeCards.reduce((acc, curr) => {
         const newCurr = Object.assign({}, curr);
