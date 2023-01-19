@@ -17,7 +17,7 @@ const Cart = (): JSX.Element => {
           <span className={styles.count}>К-во</span>
         </div>
         <div className={styles.cards}>
-          {state.cards.length === 0 && (
+          {state && state.cards && state.cards.length === 0 && (
             <span className={styles.default}>Пока в корзине ничего нет 😧</span>
           )}
           <Cards cards={state.cards} type="cart" />
